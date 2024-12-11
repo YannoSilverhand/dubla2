@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg4l76053hhg8"]
+
+[ext_resource type="Texture2D" uid="uid://dm7w6wq871qag" path="res://Imagini/swords (FREE) pack.png" id="1_wwy74"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep2og"]
+atlas = ExtResource("1_wwy74")
+region = Rect2(0, 0, 160, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sa3pt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ep2og")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y5a8f"]
+radius = 5.0
+height = 48.0
+
+[node name="Sprite2D" type="Sprite2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.500001, -1.5)
+rotation = 0.781704
+scale = Vector2(0.18125, 0.152778)
+sprite_frames = SubResource("SpriteFrames_sa3pt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+rotation = 0.818725
+shape = SubResource("CapsuleShape2D_y5a8f")

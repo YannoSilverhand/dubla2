@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3dcrqf0pvejv"]
+
+[ext_resource type="Texture2D" uid="uid://di82ouctd77t1" path="res://Imagini/Idle.png" id="1_0y1w5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vpwd"]
+size = Vector2(705, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk5oy"]
+atlas = ExtResource("1_0y1w5")
+region = Rect2(0, 0, 28, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1exqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk5oy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(342.5, 118)
+shape = SubResource("RectangleShape2D_7vpwd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(288, 112)
+scale = Vector2(20.0357, 9.70833)
+sprite_frames = SubResource("SpriteFrames_1exqu")
